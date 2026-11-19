@@ -1,0 +1,402 @@
+body {
+    background-color: #0E1116;
+    margin: 0;
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE och Edge */
+}
+
+nav a img {
+    height: 19.5px;
+    padding-right: 4px;
+}
+
+nav {
+    width: 100vw;
+    height: 47.5px;
+
+    background-color: rgba(14, 17, 22, 0.8);
+    backdrop-filter: blur(10px);
+
+    border-bottom: #222 1px solid;
+
+    z-index: 100;
+    position: fixed;
+    top: 3.6vh;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: right;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+    border-left: #222 1px solid;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 136, 254);
+}
+
+#logo {
+    float: left;
+
+    display: flex;
+    align-items: center;
+
+    align-content: center;
+}
+
+#logo a {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    display: flex;
+    align-items: center;
+
+    border-right: #222 1px solid;
+
+    border-left: none;
+}
+
+h1 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    
+    font-size: clamp(48px, calc(30.857px + 4.762vw), 88px);
+    
+    color: white;
+}
+
+h2 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    font-size: clamp(24px, calc(13.714px + 2.857vw), 48px);
+
+    color: white;
+}
+
+h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    font-size: clamp(18px, calc(13.714px + 1.19vw), 28px);
+
+    color: white;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+    color: white;
+}
+
+header {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
+    font-size: 1.75vh;
+
+    color: white;
+
+    text-align: center;
+    width: 100vw;
+
+    padding: 0.75vh 0;
+
+    background-color: rgba(0, 136, 254);
+
+    z-index: 100;
+    position: fixed;
+}
+
+.flex-container {
+    display: flex;
+}
+
+#hero_sec .flex-container {
+    gap: 10vw;
+    align-items: center;
+}
+
+#hero_sec {
+    margin: 0 3vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#hero_sec p {
+    font-size: clamp(18px, calc(13.714px + 1.19vw), 28px);
+}
+
+#hero_sec main {
+    float: left;
+    width: 42vw;
+}
+
+#hero_sec aside {
+    float: right;
+    width: 42vw;
+}
+
+#hero_sec main h1, #hero_sec main p {
+    margin: 1.5vw 0;
+}
+
+#hero_sec aside img {
+    width: 17.5rem;
+}
+
+#top_img {
+    position: absolute;
+
+    margin: 5vw 0 0 -2.5vw;
+
+    z-index: 1;
+}
+
+@media (max-width: 1200px) {
+
+    #hero_sec aside img {
+        width: 12.5rem;
+    }
+
+    #top_img {
+    position: absolute;
+
+    margin: 5vw 0 0 -4.5vw;
+
+    z-index: 1;
+}
+
+@media (max-width: 850px) {
+    #hero_sec main {
+        width: 100vw;
+    }
+
+    #hero_sec aside {
+        display: none;
+    }
+}
+    
+}
+
+.logo-marquee {
+    overflow: hidden;
+    width: 100%;
+    padding: 2rem 0;
+    background: #1b1f26;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #0e1116 10%,
+        #0e1116 90%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        #0e1116 10%,
+        #0e1116 90%,
+        transparent
+    );
+}
+
+.logo-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-logos 20s linear infinite;
+}
+
+.logo-marquee:hover .logo-track {
+    animation-play-state: paused;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding-right: 4rem; 
+}
+
+.logo-group img {
+    height: 2rem; 
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-group img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .logo-group[aria-hidden="true"] {
+        display: none;
+    }
+}
+
+#info_sec {
+    margin: 0 3vw;
+    height: 50vh;
+}
+
+#info_sec p {
+    font-size: clamp(12px, calc(6.857px + 1.429vw), 24px);
+}
+
+#info_sec .flex-container {
+    justify-content: space-between;
+    gap: 2.5rem;
+} 
+
+.card p {
+    margin: 0px;
+}
+
+.card {
+    background-color: #1b1f26;
+    padding: 1.5rem;
+
+    border: #222 1px solid;
+    border-radius: 12px;
+}
+
+footer {
+    background-color: #1b1f26;
+
+    border-top: #222 1px solid;
+}
+
+footer .flex-container {
+    display: flex;
+    align-items: stretch;
+
+    height: 50px;
+}
+
+footer #logo {
+    width: 100%
+}
+
+footer #logo a {
+    text-decoration: none;
+    border-right: none;
+    height: 50px;
+    text-align: center;
+}
+
+footer a img {
+    height: 50px;
+}
+
+footer main {
+    float: left;
+    width: 65.5vw;
+    height: 20vh;
+    padding: 3vw;
+    padding-right: 1.5vw;
+}
+
+footer aside {
+    float: right;
+    width: 25.5vw;
+    height: 20vh;
+    padding: 3vw;
+    padding-left: 1.5vw;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+footer ul li {
+    float: right;
+}
+
+footer ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+footer ul li a:hover {
+    background-color: rgba(0, 136, 254);
+}
