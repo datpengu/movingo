@@ -413,3 +413,10 @@ footer ul li a {
 footer ul li a:hover {
     background-color: rgba(0, 136, 254);
 }
+
+/* The site banner and navigation are fixed; keep the search content below them. */
+.journey-search-page {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: calc(3.6vh + 47.5px + 3rem) 3vw 3rem;
+}
