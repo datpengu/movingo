@@ -30,6 +30,11 @@ async function resRobot(path, params, apiKey) {
 
 export default {
   async fetch(request, env) {
+    const origin = request.headers.get("Origin");
+    if (origin !== ALLOWED_ORIGIN) {
+      return response(request, { error: "Origin not allowed." }, 403);
+    }
+
     if (request.method === "OPTIONS") {
       return new Response(null, { headers: { ...corsHeaders(request), "Access-Control-Allow-Methods": "GET, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" } });
     }
