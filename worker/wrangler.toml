@@ -1,0 +1,6 @@
+name = "movingo-journey-api"
+main = "worker.js"
+compatibility_date = "2026-11-19"
+
+# Never put RESROBOT_API_KEY here. Add it as a Cloudflare Worker Secret instead:
+# npx wrangler secret put RESROBOT_API_KEY
