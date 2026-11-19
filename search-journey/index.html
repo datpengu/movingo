@@ -1,15 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sök resa</title>
-
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Sök resa – MovingoPlanner</title>
 </head>
 <body>
-    search
+  <header>MovingoPlanner är under utveckling just nu!</header>
+  <nav>
+    <ul>
+      <li id="logo"><a href="../"><img src="../img/logo.png" alt="MovingoPlanner logga">MovingoPlanner</a></li>
+      <li><a href="../downloads/">Ladda ner</a></li>
+      <li><a href="../faq/">FAQ</a></li>
+      <li><a href="../about/">Om appen</a></li>
+      <li><a href="./" aria-current="page">Sök resa</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Sök resa</h1>
+    <form id="journey-search">
+      <p>
+        <label for="origin">Från</label>
+        <input id="origin" name="origin" autocomplete="off" required>
+        <select id="origin-options" size="5" hidden aria-label="Välj avgångshållplats"></select>
+      </p>
+      <p>
+        <label for="destination">Till</label>
+        <input id="destination" name="destination" autocomplete="off" required>
+        <select id="destination-options" size="5" hidden aria-label="Välj destinationshållplats"></select>
+      </p>
+      <p><button type="button" id="swap">Byt platser</button></p>
+      <p>
+        <label for="date">Datum</label>
+        <input id="date" name="date" type="date" required>
+      </p>
+      <p>
+        <label for="time">Tid</label>
+        <input id="time" name="time" type="time" required>
+      </p>
+      <p>
+        <input id="arrival" name="arrival" type="checkbox">
+        <label for="arrival">Sök efter ankomsttid</label>
+      </p>
+      <p><button type="submit">Sök resor</button></p>
+    </form>
+    <p id="status" role="status"></p>
+    <section id="journey-results" aria-live="polite" hidden>
+      <h2>Reseförslag</h2>
+      <div id="results"></div>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
