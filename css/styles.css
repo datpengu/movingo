@@ -25,7 +25,7 @@ nav {
     background-color: rgba(14, 17, 22, 0.8);
     backdrop-filter: blur(10px);
 
-    border-bottom: #222 1px solid;
+    border-bottom: #555 1px solid;
 
     z-index: 100;
     position: fixed;
@@ -55,11 +55,11 @@ nav ul li a {
     font-weight: 300;
     font-style: normal;
 
-    border-left: #222 1px solid;
+    border-left: #555 1px solid;
 }
 
 nav ul li a:hover {
-    background-color: rgba(0, 136, 254);
+    background-color: #1b1f26;
 }
 
 #logo {
@@ -81,7 +81,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
 
-    border-right: #222 1px solid;
+    border-right: #555 1px solid;
 
     border-left: none;
 }
@@ -212,11 +212,12 @@ header {
     }
 
     #top_img {
-    position: absolute;
+        position: absolute;
 
-    margin: 5vw 0 0 -4.5vw;
+        margin: 5vw 0 0 -4.5vw;
 
-    z-index: 1;
+        z-index: 1;
+    }
 }
 
 @media (max-width: 850px) {
@@ -228,14 +229,14 @@ header {
         display: none;
     }
 }
-    
-}
 
 .logo-marquee {
     overflow: hidden;
     width: 100%;
     padding: 2rem 0;
     background: #1b1f26;
+
+    border: #555 1px solid;
 
     mask-image: linear-gradient(
         to right,
@@ -306,8 +307,8 @@ header {
 }
 
 #info_sec {
-    margin: 0 3vw;
-    height: 50vh;
+    margin: 3vw;
+    height: auto;
 }
 
 #info_sec p {
@@ -316,25 +317,47 @@ header {
 
 #info_sec .flex-container {
     justify-content: space-between;
-    gap: 2.5rem;
-} 
+    gap: 2.75vw;
+    flex-wrap: wrap;
+}   
 
-.card p {
+#info_sec .flex-container div {
+    background-color: #1b1f26;
+    padding: 1.5rem;
+    flex: 1;
+    border: #555 1px solid;
+    border-radius: 12px;
+    min-width: 25vw; 
+}
+
+#info_sec .flex-container div p {
     margin: 0px;
 }
 
-.card {
-    background-color: #1b1f26;
-    padding: 1.5rem;
+#info_sec .flex-container div div {
+    background-color: rgba(0, 136, 254, 0.2);
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    padding: 0;
 
-    border: #222 1px solid;
-    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5vh;
+    border: none;
+}
+
+#info_sec .flex-container div div img {
+    height: 30px;
+    margin: 10px;
+
+    filter: brightness(0) saturate(100%) invert(41%) sepia(73%) saturate(3810%) hue-rotate(191deg) brightness(100%) contrast(100%);
 }
 
 footer {
     background-color: #1b1f26;
 
-    border-top: #222 1px solid;
+    border-top: #555 1px solid;
 }
 
 footer .flex-container {
@@ -413,12 +436,126 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    background-color: rgba(0, 136, 254);
+    background-color: #555;
 }
 
-/* The site banner and navigation are fixed; keep the search content below them. */
-.journey-search-page {
-    box-sizing: border-box;
-    min-height: 100vh;
-    padding: calc(3.6vh + 47.5px + 3rem) 3vw 3rem;
+
+form  {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
+    color: white;
+}
+
+#location_sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 5rem;
+    width: 90vw;
+}
+
+#location_sec input[id=origin], #location_sec input[id=destination] {
+    height: 45px;
+    width: 20vw;
+}
+
+#location_sec button{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: #555 1px solid;
+}
+
+#location_sec button img {
+    height: 25px;
+    margin: auto;
+}
+
+#faq_sec {
+    margin: 15vh 3vw;
+}
+
+.faq-container {
+    max-width: 800px; 
+    margin: 50px auto; 
+    padding: 20px;
+
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+    color: white;
+}
+
+.faq-accordion {
+    border: #555 1px solid;
+    border-radius: 16px;
+    background-color: #1b1f26;
+}
+
+.faq-item {
+    border-bottom: 1px solid #555;
+    overflow: hidden; 
+    color: #fff;
+}
+
+.faq-item-last {
+    border-bottom: none;
+}
+
+.faq-question {
+    background-color: #1b1f26;
+    color: white;
+
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    border-radius: 16px;
+}
+
+.faq-question:hover {
+    background-color: #1b1f26;
+}
+
+.faq-question .arrow {
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .arrow {
+    transform: scale(-1); 
+}
+
+.faq-answer {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #1b1f26;
+
+    border-radius: 16px;
+}
+
+.faq-answer p {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.5;
 }

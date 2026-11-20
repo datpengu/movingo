@@ -25,33 +25,38 @@
             <li><a href="./" aria-current="page">Sök resa</a></li>
         </ul>
     </nav>
-    <main class="journey-search-page">
+    <main id="journey_sec">
         <h1>Sök resa</h1>
         <form id="journey-search">
-            <p>
-                <label for="origin">Från</label>
-                <input id="origin" name="origin" autocomplete="off" required>
-                <select id="origin-options" size="5" hidden aria-label="Välj avgångshållplats"></select>
-            </p>
-            <p>
-                <label for="destination">Till</label>
-                <input id="destination" name="destination" autocomplete="off" required>
-                <select id="destination-options" size="5" hidden aria-label="Välj destinationshållplats"></select>
-            </p>
-            <p><button type="button" id="swap">Byt platser</button></p>
-            <p>
-                <label for="date">Datum</label>
-                <input id="date" name="date" type="date" required>
-            </p>
-            <p>
-                <label for="time">Tid</label>
-                <input id="time" name="time" type="time" required>
-            </p>
-            <p>
-                <input id="arrival" name="arrival" type="checkbox">
-                <label for="arrival">Sök efter ankomsttid</label>
-            </p>
-            <p><button type="submit">Sök resor</button></p>
+            
+            <div id="location_sec">
+                <div>
+                    <label for="origin">Från</label><br>
+                    <input id="origin" name="origin" autocomplete="off" required>
+                    <select id="origin-options" size="5" hidden aria-label="Välj avgångshållplats"></select>
+                </div>
+
+                <button type="button" id="swap"><img src="../img/arrow.png" alt=""></button></p>
+
+                <div>
+                    <label for="destination">Till</label><br>
+                    <input id="destination" name="destination" autocomplete="off" required>
+                    <select id="destination-options" size="5" hidden aria-label="Välj destinationshållplats"></select>
+                </div>
+            </div>
+            
+          
+
+            <label for="date">Datum</label>
+            <input id="date" name="date" type="date" required>
+
+            <label for="time">Tid</label>
+            <input id="time" name="time" type="time" required>
+
+            <input id="arrival" name="arrival" type="checkbox">
+            <label for="arrival">Sök efter ankomsttid</label>
+
+            <button type="submit">Sök resor</button></p>
         </form>
         <p id="status" role="status"></p>
         <section id="journey-results" aria-live="polite" hidden>
