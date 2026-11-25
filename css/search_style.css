@@ -278,3 +278,270 @@
         transform: rotate(270deg);
     }
 }
+
+
+
+/* ========================================
+   JOURNEY RESULTS
+======================================== */
+
+#journey-results {
+    margin-top: 5rem;
+}
+
+#journey-results h2 {
+    margin-bottom: 2rem;
+}
+
+/* Results container */
+
+#results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Journey card */
+
+.journey-card {
+    background: #1b1f26;
+    border: 1px solid #353b45;
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+
+    transition: border-color 0.2s ease,
+                transform 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.journey-card:hover {
+    border-color: #0088fe;
+    background-color: #1e242d;
+    transform: translateY(-2px);
+}
+
+/* Header */
+
+.journey-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.journey-times {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.departure-time,
+.arrival-time {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 700;
+    color: white;
+    font-variant-numeric: tabular-nums;
+}
+
+.journey-time-line {
+    width: clamp(35px, 7vw, 100px);
+    height: 2px;
+    background: #0088fe;
+    position: relative;
+}
+
+.journey-time-line::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0088fe;
+}
+
+.journey-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: "Figtree", sans-serif;
+    font-size: 14px;
+}
+
+.journey-duration {
+    color: white;
+    font-weight: 600;
+}
+
+.journey-changes {
+    color: #aab4c2;
+    background: #292f39;
+    border-radius: 20px;
+    padding: 6px 12px;
+}
+
+/* Route */
+
+.journey-route {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    margin-top: 0.5rem;
+
+    font-family: "Figtree", sans-serif;
+    font-size: 14px;
+    color: #9ba6b5;
+}
+
+.route-arrow {
+    color: #0088fe;
+}
+
+/* Journey details */
+
+.journey-details {
+    border-top: 1px solid #353b45;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.journey-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.journey-leg {
+    display: grid;
+    grid-template-columns: 65px 20px minmax(0, 1fr);
+    gap: 1rem;
+    min-height: 75px;
+}
+
+.leg-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2px 0 15px;
+
+    font-family: "Figtree", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c5cbd5;
+    font-variant-numeric: tabular-nums;
+}
+
+.leg-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leg-dot {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #0088fe;
+    border-radius: 50%;
+    background: #1b1f26;
+    z-index: 1;
+}
+
+.leg-line {
+    flex: 1;
+    width: 2px;
+    background: #414956;
+    margin-top: 3px;
+}
+
+.journey-leg:last-child .leg-line {
+    display: none;
+}
+
+.leg-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 20px;
+
+    font-family: "Figtree", sans-serif;
+    font-size: 13px;
+    color: #aab4c2;
+}
+
+.leg-info strong {
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+}
+
+.leg-destination {
+    color: #747f8e;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .journey-card {
+        padding: 1.25rem;
+    }
+
+    .journey-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .journey-times {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .journey-summary {
+        flex-wrap: wrap;
+    }
+}
+
+
+
+/* Page background details */
+
+#journey_sec {
+    position: relative;
+}
+
+#journey_sec > h1 {
+    letter-spacing: -2px;
+}
+
+/* Search card */
+
+#journey-search {
+    position: relative;
+    overflow: visible;
+}
+
+/* Status message */
+
+#status:not(:empty) {
+    background: rgba(0, 136, 254, 0.08);
+    border-left: 3px solid #0088fe;
+    padding: 12px 16px;
+    border-radius: 4px 10px 10px 4px;
+}
+
+/* Smooth focus transitions */
+
+#journey-search input,
+#journey-search button {
+    transition: all 0.2s ease;
+}
+
+/* Selection color */
+
+::selection {
+    background: rgba(0, 136, 254, 0.4);
+    color: white;
+}

@@ -114,19 +114,80 @@ function legName(leg) {
   return leg.Product?.[0]?.name || leg.name || (leg.type === "WALK" ? "Gång" : "Kollektivtrafik");
 }
 
-function renderJourneys(journeys) {
-  $("journey-results").hidden = false;
-  $("results").innerHTML = journeys.map((journey) => {
-    const legs = journey.LegList?.Leg || [];
-    const first = legs[0]?.Origin;
-    const last = legs.at(-1)?.Destination;
-    const changes = Math.max(0, legs.filter((leg) => leg.type === "JNY").length - 1);
 
-    return `<article>
-      <h3>${escapeHtml(first?.time || "--:--")} – ${escapeHtml(last?.time || "--:--")}</h3>
-      <p>${durationText(journey.duration)} · ${changes} byten</p>
-      <p>${escapeHtml(first?.name || "")} till ${escapeHtml(last?.name || "")}</p>
-      <ol>${legs.map((leg) => `<li>${escapeHtml(leg.Origin?.time || "")} ${escapeHtml(legName(leg))}: ${escapeHtml(leg.Origin?.name || "")} → ${escapeHtml(leg.Destination?.name || "")} ${escapeHtml(leg.Destination?.time || "")}</li>`).join("")}</ol>
-    </article>`;
-  }).join("");
+function renderJourneys(journeys) {
+    $("journey-results").hidden = false;
+
+    $("results").innerHTML = journeys.map((journey) => {
+        const legs = journey.LegList?.Leg || [];
+        const first = legs[0]?.Origin;
+        const last = legs.at(-1)?.Destination;
+        const changes = Math.max(
+            0,
+            legs.filter((leg) => leg.type === "JNY").length - 1
+        );
+
+        return `
+            <article class="journey-card">
+
+                <div class="journey-header">
+                    <div class="journey-times">
+                        <span class="departure-time">
+                            ${escapeHtml(first?.time || "--:--")}
+                        </span>
+
+                        <span class="journey-time-line"></span>
+
+                        <span class="arrival-time">
+                            ${escapeHtml(last?.time || "--:--")}
+                        </span>
+                    </div>
+
+                    <div class="journey-summary">
+                        <span class="journey-duration">
+                            ${durationText(journey.duration)}
+                        </span>
+
+                        <span class="journey-changes">
+                            ${changes === 0 ? "Direktresa" :
+                                changes + (changes === 1 ? " byte" : " byten")}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="journey-route">
+                    <span>${escapeHtml(first?.name || "")}</span>
+                    <span class="route-arrow">→</span>
+                    <span>${escapeHtml(last?.name || "")}</span>
+                </div>
+
+                <div class="journey-details">
+                    <ol class="journey-timeline">
+                        ${legs.map((leg) => `
+                            <li class="journey-leg">
+                                <div class="leg-time">
+                                    <span>${escapeHtml(leg.Origin?.time || "")}</span>
+                                    <span>${escapeHtml(leg.Destination?.time || "")}</span>
+                                </div>
+
+                                <div class="leg-indicator">
+                                    <span class="leg-dot"></span>
+                                    <span class="leg-line"></span>
+                                </div>
+
+                                <div class="leg-info">
+                                    <strong>${escapeHtml(legName(leg))}</strong>
+                                    <span>${escapeHtml(leg.Origin?.name || "")}</span>
+                                    <span class="leg-destination">
+                                        ${escapeHtml(leg.Destination?.name || "")}
+                                    </span>
+                                </div>
+                            </li>
+                        `).join("")}
+                    </ol>
+                </div>
+
+            </article>
+        `;
+    }).join("");
 }
