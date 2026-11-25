@@ -8,6 +8,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE och Edge */
@@ -130,7 +134,7 @@ p {
     font-weight: 300;
     font-style: normal;
 
-    color: white;
+    color: #ccc;
 }
 
 header {
@@ -158,12 +162,34 @@ header {
     left: 0;
 }
 
+section a {
+    padding: 18px 20px;
+    background-color: rgba(0, 136, 254);
+    border-radius: 16px;
+    color: white;
+    text-decoration: none;
+
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+    font-size: clamp(10px, calc(5.714px + 1.19vw), 20px);
+}
+
+section a.alternate-btn {
+    background-color: #1b1f26;
+    border: #555 1px solid;
+
+    color: white;
+}
+
 .flex-container {
     display: flex;
 }
 
 #hero_sec .flex-container {
-    gap: 10vw;
+    gap: 15vw;
     align-items: center;
 }
 
@@ -230,7 +256,7 @@ header {
     }
 }
 
-.logo-marquee {
+#logoMarquee_sec {
     overflow: hidden;
     width: 100%;
     padding: 2rem 0;
@@ -260,7 +286,7 @@ header {
     animation: scroll-logos 20s linear infinite;
 }
 
-.logo-marquee:hover .logo-track {
+#logoMarquee_sec:hover .logo-track {
     animation-play-state: paused;
 }
 
@@ -312,7 +338,7 @@ header {
 }
 
 #info_sec p {
-    font-size: clamp(12px, calc(6.857px + 1.429vw), 24px);
+    font-size: clamp(10px, calc(5.714px + 1.19vw), 20px);
 }
 
 #info_sec .flex-container {
@@ -332,6 +358,7 @@ header {
 
 #info_sec .flex-container div p {
     margin: 0px;
+
 }
 
 #info_sec .flex-container div div {
@@ -354,8 +381,15 @@ header {
     filter: brightness(0) saturate(100%) invert(41%) sepia(73%) saturate(3810%) hue-rotate(191deg) brightness(100%) contrast(100%);
 }
 
+#appLink_sec {
+    margin: 3vw;
+    height: 50vh;
+}
+
 footer {
     background-color: #1b1f26;
+
+    width: 100vw;
 
     border-top: #555 1px solid;
 }
@@ -393,7 +427,7 @@ footer #logo img {
 
 footer main {
     float: left;
-    width: 65.5vw;
+    width: 65.5%;
     height: 20vh;
     padding: 3vw;
     padding-right: 1.5vw;
@@ -405,7 +439,7 @@ footer main p {
 
 footer aside {
     float: right;
-    width: 25.5vw;
+    width: 25.5%;
     height: 20vh;
     padding: 3vw;
     padding-left: 1.5vw;

@@ -16,21 +16,23 @@
 </head>
 <body>
     <header>MovingoPlanner är under utveckling just nu!</header>
-    <nav>
+    <nav id="navbar">
         <ul>
             <li id="logo"><a href="/"><img src="img/logo.png" alt="MovingoPlanner logga">MovingoPlanner</a></li>
-            <li><a href="/downloads/">Ladda ner</a></li>
-            <li><a href="/faq/">FAQ</a></li>
-            <li><a href="/about/">Om appen</a></li>
-            <li><a href="/search-journey/">Sök resa</a></li>
+            <li id="nav-link"><a href="/downloads/">Ladda ner</a></li>
+            <li id="nav-link"><a href="/faq/">FAQ</a></li>
+            <li id="nav-link"><a href="/about/">Om appen</a></li>
+            <li id="nav-link"><a href="/search-journey/">Sök resa</a></li>
         </ul>
     </nav>
 
     <section id="hero_sec">
         <div class="flex-container">
             <main>
-                <h1>Planera varje resa i Mälardalen</h1>
+                <h1>Planera varje resa i Mälardalen.</h1>
                 <p>MovingoPlanner är en modern reseplanerare som söker resor mellan Sveriges trafikregioner och är optimerad för Movingo-zonen. SL, UL och Mälartåg i en och samma sökning.</p>
+                <a href="#appLink_sec">Hämta appen</a>
+                <a href="#logoMarquee_sec" class="alternate-btn">Se hur det fungerar</a>
             </main>
             <aside>
                 <div>
@@ -41,7 +43,7 @@
         </div>
     </section>
 
-    <section class="logo-marquee">
+    <section id="logoMarquee_sec">
         <div class="logo-track">
 
             <div class="logo-group">
@@ -82,7 +84,7 @@
 
     <section id="info_sec">
         <div>
-            <h2>Varför MovingoPlanner?</h2>
+            <h2>Byggd för hur du faktiskt pendlar.</h2>
 
             <div class="flex-container">
                 <div>
@@ -110,29 +112,33 @@
                     <div>
                         <img src="img/map.png" alt="logga">
                     </div>
-                    <h3>Sök mellan regioner</h3>
+                    <h3>Varje sträcka, tydligt</h3>
                     <p>Öppna en resa för att se varje tåg och buss med avgångs- och ankomsttider, plus promenaderna emellan.</p>
                 </div>
                 <div>
                     <div>
                         <img src="img/danger.png" alt="logga">
                     </div>
-                    <h3>Kolla trafikläget</h3>
-                    <p>
-                        Trafikläget är ett knapptryck bort på hemskärmen
-                    </p>
+                    <h3>Trafikläget</h3>
+                    <p>Kolla aktuellt trafikläge direkt från startsidan innan du går hemifrån.</p>
                 </div>
                 <div>
                     <div>
                         <img src="img/bookmark.png" alt="logga">
                     </div>
-                    <h3>Kolla trafikläget</h3>
-                    <p>
-                        Filrera snabbt bort de operatörer eller resvägar du ej vill ha med flera filter
-                    </p>
+                    <h3>Karta och sparade resor</h3>
+                    <p>Utforska kartan och spara dina vanliga resor så att pendlingen alltid ligger ett tryck bort.</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="appLink_sec">
+        <h1>Vart ska vi?</h1>
+        <p>Din nästa resa i Mälardalen är en sökning bort.</p>
+        <a href="/downloads/">
+            Hämta MovingoPlanner
+        </a>
     </section>
 
     <footer>
