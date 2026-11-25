@@ -96,6 +96,8 @@ h1 {
     font-weight: 800;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+
+    line-height: 1;
     
     font-size: clamp(48px, calc(30.857px + 4.762vw), 88px);
     
@@ -184,6 +186,11 @@ section a.alternate-btn {
     color: white;
 }
 
+#hero_sec a,
+#appLink_sec a {
+    display: inline-block;
+}
+
 .flex-container {
     display: flex;
 }
@@ -194,12 +201,14 @@ section a.alternate-btn {
 }
 
 #hero_sec {
-    margin: 0 3vw;
+    margin: 0 6vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
+
 
 #hero_sec p {
     font-size: clamp(18px, calc(13.714px + 1.19vw), 28px);
@@ -215,8 +224,12 @@ section a.alternate-btn {
     width: 42vw;
 }
 
-#hero_sec main h1, #hero_sec main p {
-    margin: 1.5vw 0;
+#hero_sec main h1, #hero_sec main p, #hero_sec main a {
+    margin: 1vw 0;
+}
+
+#hero_sec main h1 {
+    margin-top: calc(3.6vh + 47.5px);
 }
 
 #hero_sec aside img {
@@ -382,8 +395,15 @@ section a.alternate-btn {
 }
 
 #appLink_sec {
-    margin: 3vw;
-    height: 50vh;
+    padding: 12.5vh 0;
+    width: 100vw;
+    text-align: center;
+    border-top: #555 1px solid;
+}
+
+#appLink_sec h1{
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 footer {
