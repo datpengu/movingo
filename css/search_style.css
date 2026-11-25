@@ -1,0 +1,280 @@
+
+/* ========================================
+   JOURNEY SEARCH – MOVINGOPLANNER
+======================================== */
+
+#journey_sec {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20vh 5vw 8vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#journey_sec > h1 {
+    font-size: clamp(42px, 5vw, 64px);
+    margin: 0 0 2rem;
+}
+
+/* Search form */
+
+#journey-search {
+    background-color: #1b1f26;
+    border: 1px solid #353b45;
+    border-radius: 20px;
+    padding: clamp(20px, 3vw, 40px);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 1.5rem;
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+#journey-search > label:not([for="arrival"]) {
+    display: block;
+    width: 100%;
+    margin-bottom: -1.2rem;
+}
+
+#journey-search label,
+#location_sec label {
+    font-family: "Figtree", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #c5cbd5;
+    display: inline-block;
+    margin-bottom: 9px;
+}
+
+#location_sec {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 52px minmax(0, 1fr);
+    align-items: end;
+    gap: 1rem;
+}
+
+#location_sec > div {
+    position: relative;
+    min-width: 0;
+}
+
+#location_sec input {
+    width: 100%;
+    height: 52px;
+    box-sizing: border-box;
+}
+
+#journey-search input:not([type="checkbox"]) {
+    background-color: #11151b;
+    border: 1px solid #414956;
+    border-radius: 10px;
+    padding: 0 15px;
+
+    color: white;
+    font-family: "Figtree", sans-serif;
+    font-size: 15px;
+
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#journey-search input:not([type="checkbox"]):focus {
+    border-color: #0088fe;
+    box-shadow: 0 0 0 3px rgba(0, 136, 254, 0.15);
+}
+
+#journey-search input::placeholder {
+    color: #727c8b;
+}
+
+/* Swap button */
+
+#location_sec button {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    border: 1px solid #414956;
+    background-color: #252c36;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#location_sec button:hover {
+    background-color: #303b49;
+    transform: rotate(180deg);
+}
+
+#location_sec button img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Station suggestions */
+
+#origin-options,
+#destination-options {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    z-index: 50;
+
+    background-color: #252c36;
+    border: 1px solid #414956;
+    border-radius: 10px;
+    padding: 5px;
+
+    color: white;
+    font-family: "Figtree", sans-serif;
+    font-size: 14px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+#origin-options option,
+#destination-options option {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#origin-options option:hover,
+#destination-options option:hover {
+    background-color: #0088fe;
+}
+
+/* Date and time */
+
+#journey-search input[type="date"],
+#journey-search input[type="time"] {
+    min-width: 150px;
+    height: 48px;
+    box-sizing: border-box;
+    color-scheme: dark;
+}
+
+/* Arrival checkbox */
+
+#journey-search input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0088fe;
+    cursor: pointer;
+    margin: 0 0 3px;
+}
+
+#journey-search label[for="arrival"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Search button */
+
+#journey-search button[type="submit"] {
+    height: 48px;
+    padding: 0 28px;
+
+    background-color: #0088fe;
+    border: none;
+    border-radius: 10px;
+
+    color: white;
+    font-family: "Figtree", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#journey-search button[type="submit"]:hover {
+    background-color: #0073d9;
+    transform: translateY(-2px);
+}
+
+#journey-search button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Status message */
+
+#status {
+    margin: 1.5rem 0;
+    font-family: "Figtree", sans-serif;
+    font-size: 14px;
+    color: #aeb8c7;
+}
+
+/* Journey results */
+
+#journey-results {
+    margin-top: 4rem;
+}
+
+#journey-results h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    margin-bottom: 1.5rem;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+    #journey_sec {
+        padding: 17vh 5vw 6vh;
+    }
+
+    #location_sec {
+        grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr);
+        gap: 0.5rem;
+    }
+
+    #location_sec button {
+        width: 42px;
+        height: 42px;
+    }
+
+    #journey-search {
+        gap: 1.25rem;
+    }
+
+    #journey-search > input:not([type="checkbox"]) {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #journey-search button[type="submit"] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    #location_sec {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    #location_sec button {
+        justify-self: center;
+        transform: rotate(90deg);
+    }
+
+    #location_sec button:hover {
+        transform: rotate(270deg);
+    }
+}
