@@ -172,8 +172,19 @@ section a {
 section a.alternate-btn {
     background-color: #1b1f26;
     border: #555 1px solid;
+}
 
-    color: white;
+.img-btn {
+    padding: 0;
+    background-color: none;
+    border-radius: none;
+    border: none; 
+    color: none;
+    height: 7vh;
+}
+
+.img-btn img {
+    height: 7.5vh;
 }
 
 #hero_sec a,
@@ -337,7 +348,7 @@ section a.alternate-btn {
 }
 
 #info_sec {
-    margin: 3vw;
+    margin: 3vw 6vw;
     height: auto;
 }
 
@@ -347,7 +358,7 @@ section a.alternate-btn {
 
 #info_sec .flex-container {
     justify-content: space-between;
-    gap: 2.75vw;
+    gap: 2.5vw;
     flex-wrap: wrap;
 }   
 
@@ -357,7 +368,7 @@ section a.alternate-btn {
     flex: 1;
     border: #555 1px solid;
     border-radius: 12px;
-    min-width: 25vw; 
+    min-width: 20vw; 
 }
 
 #info_sec .flex-container div p {
@@ -443,9 +454,9 @@ footer #logo img {
 
 footer main {
     float: left;
-    width: 65.5%;
-    height: 20vh;
-    padding: 3vw;
+    width: 62.5%;
+    height: 17.5vh;
+    padding: 3vw 6vw;
     padding-right: 1.5vw;
 }
 
@@ -455,9 +466,9 @@ footer main p {
 
 footer aside {
     float: right;
-    width: 25.5%;
-    height: 20vh;
-    padding: 3vw;
+    width: 22.5%;
+    height: 17.5vh;
+    padding: 3vw 6vw;
     padding-left: 1.5vw;
 }
 
